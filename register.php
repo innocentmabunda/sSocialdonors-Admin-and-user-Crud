@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 if(isset($_POST['submit'])){
   
     $email = $_POST['email'];
@@ -34,11 +34,11 @@ if(isset($_POST['submit'])){
   <form method="post" action="register.php">
   	<div class="input-group">
   	  <label></label>
-  	  <input type="text" name="username" placeholder=" Enter username" autocomplete="off" value="<?php echo $username; ?>">
+  	  <input type="text" name="username" placeholder=" Enter username" autocomplete="off">
   	</div>
   	<div class="input-group">
   	  <label></label>
-  	  <input type="email" name="email" placeholder="Enter your email" autocomplete="off" value="<?php echo $email; ?>">
+  	  <input type="email" name="email" placeholder="Enter your email" autocomplete="off">
   	</div>
   	<div class="input-group">
   	  <label></label>

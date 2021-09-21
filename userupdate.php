@@ -1,7 +1,7 @@
 <?php 
 include 'server.php';
-$id = $_GET['update'];
-$sql="Select * from `users` where `id` =$id";
+
+$sql="SELECT * FROM `users`;";
 $result=mysqli_query($con,$sql);
 $row=mysqli_fetchs($result);
 
@@ -17,7 +17,7 @@ if(isset($_POST['submit'])){
    
     $password = $_POST['password'];
 
-    $sql = "update `users` set id=$id, `email`='$email', `username`='$username', `password`='$password' where id=$id";
+    $sql = "update `users` set  `email`='$email', `username`='$username', `password`='$password' ";
     $result = mysqli_query($con,$sql);
     if($result){
        // echo "Updated successfully";
