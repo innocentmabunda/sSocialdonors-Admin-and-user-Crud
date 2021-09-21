@@ -1,16 +1,8 @@
 <?php
-session_start();
-	include('server.php');
-	// //fetch the record to be updated.
-	// if(isset($_GET['edit'])){
-	// 	$id = $_GET['edit'];
-	// 	$edit_state = true;
-	// 	$rec = mysqli_query($db, "SELECT * FROM users WHERE id=$id");
-	// 	$record = mysqli_fetch_assoc($db, "SELECT * FROM users WHERE id=$id");
-	// 	$username = $record['username'];
-	// 	$email = $record['email'];
-	// 	$id = $record['id'];
-	// }
+
+include('server.php');
+$image = $_SESSION['image'];
+$image_location = "user profile images/$image";
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,20 +10,20 @@ session_start();
   <title>Social Donors</title>
   <link rel="stylesheet" type="text/css" href="style66.css">
 </head>
-<body class="bodyy"><br><br><br><br><br><br>
-  	
+<body class="bodyy">
 
   <center><h2>User Profile</h2>
-  
-	
   <form method="post">
-    <div class="input-group">
-      <label></label>
-      <input type="email" name="" value='<?php echo (''.$_SESSION['email']); ?> '>
+  <div class="input-group">
+    <p><br> <img src="<?php echo("$image_location") ?>" width="300px">
     </div>
     <div class="input-group">
       <label></label>
-      <input type="text" name=""  value='<?php echo (''.$_SESSION['username']); ?> '>
+      <input type="text" name="" value='<?php echo (''.$_SESSION['email']); ?> '>
+    </div>
+    <div class="input-group">
+      <label></label>
+      <input type="text" name="" value='<?php echo (''.$_SESSION['username']); ?> '>
     </div>
   	<div class="input-group">
   	  <label></label>
@@ -42,7 +34,7 @@ session_start();
   	  <button type="submit" class="btn"  name="userupdate"><a href="userupdate.php">Update<a></button>
   	  <button type="submit" class="btn" name="userdelete"><a href="userdelete.php">Delete<a></button>
   	</div>
-  	<br>
+  	
     <p>
   	<a href="logout.php">Logout</a>
   	</p>

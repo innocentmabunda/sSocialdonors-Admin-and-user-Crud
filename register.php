@@ -1,5 +1,5 @@
 <?php 
-session_start();
+include('server.php');
 if(isset($_POST['submit'])){
   
     $email = $_POST['email'];
@@ -18,8 +18,6 @@ if(isset($_POST['submit'])){
 }
 ?>
 
-<?php include('server.php') ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,23 +29,26 @@ if(isset($_POST['submit'])){
   <center><h2>Register</h2>
   
 	
-  <form method="post" action="register.php">
+  <form method="post" action="register.php" enctype='multipart/form-data'>
   	<div class="input-group">
   	  <label></label>
-  	  <input type="text" name="username" placeholder=" Enter username" autocomplete="off">
+  	  <input type="text" name="username" placeholder=" Enter username" >
   	</div>
   	<div class="input-group">
   	  <label></label>
-  	  <input type="email" name="email" placeholder="Enter your email" autocomplete="off">
+  	  <input type="email" name="email" placeholder="Enter your email" >
   	</div>
   	<div class="input-group">
   	  <label></label>
-  	  <input type="password" name="password_1" placeholder="Enter your password" autocomplete="off">
+  	  <input type="password" name="password_1" placeholder="Enter your password" >
   	</div>
   	<div class="input-group">
   	  <label></label>
-  	  <input type="password" name="password_2" placeholder="Confirm your password" autocomplete="off">
+  	  <input type="password" name="password_2" placeholder="Confirm your password">
   	</div>
+	  <div class="input-group">
+	  <input type='file' name='image' class='button' accept='image/*' id="image">
+	</div>
   	<div class="input-group">
   	  <button type="submit" class="btn" name="reg_user">Register</button>
   	</div>
