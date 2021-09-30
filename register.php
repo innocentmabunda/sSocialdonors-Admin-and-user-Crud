@@ -4,10 +4,12 @@ if(isset($_POST['submit'])){
   
     $email = $_POST['email'];
     $username = $_POST['username'];
-    
+    $ip = gethostbyname("localhost");
+	
     $password = $_POST['password'];
+  
 
-    $sql = "INSERT INTO `users` (email,username,password) values('$email', '$username', '$password')";
+    $sql = "INSERT INTO `users` (email,username,password,ipAddress) values('$email', '$username', '$password')";
     $result = mysqli_query($con,$sql);
     if($result){
         // echo "Data inserted successfully";
@@ -16,6 +18,8 @@ if(isset($_POST['submit'])){
         die(mysqli_error($con));
     }
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +28,12 @@ if(isset($_POST['submit'])){
   <title>Social Donors</title>
   <link rel="stylesheet" type="text/css" href="style66.css">
 </head>
-<body class="bodyy"><br><br><br><br><br><br>
+<style>
+	h2{
+		color:white;
+	}
+</style>
+<body class="bodyy"><br><br><br><br>
   
   <center><h2>Register</h2>
   
@@ -49,6 +58,12 @@ if(isset($_POST['submit'])){
 	  <div class="input-group">
 	  <input type='file' name='image' class='button' accept='image/*' id="image">
 	</div>
+	
+	<div class="form-group mb-3">
+    <label for=""></label>
+    <input type="datetime-local" name="event_dt" class="form-control">
+    </div>
+
   	<div class="input-group">
   	  <button type="submit" class="btn" name="reg_user">Register</button>
   	</div>

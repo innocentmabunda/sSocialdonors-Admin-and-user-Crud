@@ -10,12 +10,26 @@ $image_location = "user profile images/$image";
   <title>Social Donors</title>
   <link rel="stylesheet" type="text/css" href="style66.css">
 </head>
+<style>
+  img{
+    border: 2px solid;
+    color: white;
+    border-bottom-left-radius:25px;
+    border-bottom-right-radius:25px;
+    border-top-left-radius:25px;
+    border-top-right-radius:25px;
+    
+  }
+  h2{
+    color: white;
+  }
+</style>
 <body class="bodyy">
 
   <center><h2>User Profile</h2>
   <form method="post">
   <div class="input-group">
-    <p><br> <img src="<?php echo("$image_location") ?>" width="300px">
+    <p> <img src="<?php echo("$image_location") ?>" width="250px">
     </div>
     <div class="input-group">
       <label></label>

@@ -96,7 +96,7 @@ if (isset($_POST['reg_user'])) {
 
   	$image = image_process($con,$dir,$image,$file_type,$file_size,$file_tem_loc);
 
-  	$query = "INSERT INTO `users`(`username`, `email`,`password`,`image`)
+  	$query = "INSERT INTO `users`(`username`, `email`,`password`,`image`, )
   			  VALUES('$username', '$email', '$password','$image');";
   	mysqli_query($con, $query);
    

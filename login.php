@@ -5,11 +5,16 @@ include('server.php')
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Registration</title>
+  <title>Social Donors</title>
   <link rel="stylesheet" type="text/css" href="style66.css">
 </head>
+<style>
+	h2{
+		color: white;
+	}
+</style>
 
-<body class="bodyy"><br><br><br><br><br>
+<body class="bodyy"><br><br><br><br><br><br><br>
   <center>
   	<h2>Login</h2>
   <form method="post" action="login.php">

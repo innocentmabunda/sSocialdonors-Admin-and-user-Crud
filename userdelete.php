@@ -1,18 +1,19 @@
 <?php
 include 'server.php';
-if(isset($_GET['deleteid'])){
-   
-    $id=$_GET['deleteid'];
 
-    $sql = "DELETE FROM `users` WHERE 0";
+    $email = $_SESSION['email'];
+
+    $sql = "DELETE FROM `users` WHERE `email` = '$email';";
+
     $result = mysqli_query($con,$sql);
     if($result){
-        // echo "Deleted successfully";
+        echo("<script type=\"text/javascript\">
+		alert(\"Your profile has been deleted.\");
+		</script>");
         header('location:index.php');
     }else{
-        die(mysqli_error($con));
+        echo"Note deleted";
     }
-}
 
 
 ?>
